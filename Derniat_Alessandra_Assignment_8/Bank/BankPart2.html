@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bank Part 2</title>
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+
+
+
+//Create a bankAccount function with parameters that we will make prototypes of
+function bankAccount(ownerName, balance)
+{
+this.ownerName = ownerName;
+
+
+this.balance = balance;
+	//If statement to verify if our input balance is a number
+	if(isNaN(balance))
+		{
+		console.log("You did not enter a number");
+		}
+
+	
+	
+}
+	//Making a prototype of an object extends the objects parameters to new methods outside of the object
+	bankAccount.prototype.toString= function()
+	{
+	return "Owner Name= " + this.ownerName + " Balance= " + this.balance;
+
+	}
+
+
+
+	//Withdraw prototype function for bank account
+	bankAccount.prototype.withdraw =function(withdrawalAmount)
+	{
+	this.balance -= withdrawalAmount;
+	
+	}
+	
+
+	
+	//Deposit prototype function for bank account
+	bankAccount.prototype.deposit = function(depositAmount)
+	{
+	this.balance	+= depositAmount;
+
+	}
+	
+
+//Create a new object, prompt user for parameter values
+var userName = prompt("Enter a name for the account");
+var userCheckingString= prompt("Enter the starting amount in number format unless you want an error");
+var userCheckingNumber= parseInt(userCheckingString,10);
+var bankAccount=new bankAccount(userName, userCheckingNumber);
+
+
+console.log(bankAccount.toString());
+bankAccount.deposit(50);
+console.log(bankAccount.toString());
+bankAccount.withdraw(40);
+console.log(bankAccount.toString());
+bankAccount.deposit(240);
+console.log(bankAccount.toString());
+bankAccount.withdraw(400);
+console.log(bankAccount.toString());
+bankAccount.withdraw(200);
+console.log(bankAccount.toString());
+
+
+
+/*
+console.log(bankAccount.toString());
+bankAccount.tostring.withdraw(66);
+console.log(bankAccount.toString());
+*/
+
+
+</script>
+
+
+</body>
+
+</html>

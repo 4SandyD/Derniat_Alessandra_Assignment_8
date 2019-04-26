@@ -1,0 +1,19 @@
+.btn {
+  width: 20em;
+  display: block;
+  padding: 10px 15px;
+  background-color: rgba(66, 85, 123, 1);
+  font-size: 1.0em;
+  text-indent: 0;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto 15px auto;
+}
+
+#add {
+  color: rgb(70, 247, 70);
+}
+
+#subtract {
+  color: rgb(255, 0, 0);
+}
